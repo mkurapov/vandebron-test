@@ -39,3 +39,7 @@ body {
   color:white;
   display: inline-flex;
 }
+
+.box-shadow--lg {
+  box-shadow: rgba(51, 61, 71, 0.12) 0px 0px 8px 0px;
+}
