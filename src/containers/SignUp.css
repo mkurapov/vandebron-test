@@ -1,0 +1,35 @@
+.sign-up-form {
+  box-shadow: rgba(0, 0, 0, 0.18) -40px 28px 40px 0px;
+}
+
+
+input:focus {
+  outline: none;
+}
+
+.input--text {
+  border: none;
+  background-color: #fcfcfc;
+  padding: 9px 20px;
+  font-size: 16px;
+  box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.12);
+  width: 100%;
+}
+
+.input--text {
+  -webkit-appearance: none;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field__error {
+  font-size: 12px;
+  font-weight: 600;
+  color: #d0021b;
+}
+
+
+

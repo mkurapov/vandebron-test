@@ -1,25 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import './bootstrap-grid.css';
+import { Switch, Route, NavLink, Redirect, withRouter } from 'react-router-dom';
+import SignUp from './containers/SignUp';
+import SubscriptionList from './containers/SubscriptionList';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <React.Fragment>
+          
+          <div className="header">
+            <div className="header__inner col-8 text-center">
+
+            <NavLink to="/" exact className="link text-center col-6" activeClassName="link--selected">
+              Sign Up
+            </NavLink>
+          
+            <NavLink to="/subscriptions" className="text-center link col-6" activeClassName="link--selected">
+              Subscriptions
+            </NavLink>
+            </div>
+        </div>
+        <div className="content">
+          <Switch>
+            <Route exact path='/'> 
+              <SignUp></SignUp>
+            </Route>
+            <Route exact path='/subscriptions'>
+              <SubscriptionList></SubscriptionList>
+            </Route>
+          </Switch>
+        </div>
+      </React.Fragment>
   );
 }
 
