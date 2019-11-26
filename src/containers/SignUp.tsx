@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { FormInput } from '../types';
+import { FormInput, UserDTO } from '../types';
 import TextInput from '../components/TextInput';
 import RadioInput from '../components/RadioInput';
 import useForm from 'react-hook-form';
 import './SignUp.css';
+import api from '../api';
+import Confetti from 'react-dom-confetti';
+
 
 const SignUpFormModel:FormInput[] = [ {
     name: 'name',
@@ -14,54 +17,93 @@ const SignUpFormModel:FormInput[] = [ {
     name: 'email',
     type: 'text',
     label: 'Email',
-    register: { required: true, pattern: {
+    register: { required: 'Please provide correct email', pattern: {
         value: /^\S+@\S+$/,
-        message: 'Please check email address'
+        message: 'Please provide correct email'
+      } }
+}, {
+    name: 'phone',
+    type: 'text',
+    label: 'Phone',
+    register: { required: 'Please provide correct phone', minLength: {
+        value: 10,
+        message: 'Please provide correct phone'
       } }
 }, {
     name: 'address_number',
     type: 'text',
-    label: 'House Number',
-    register: { required: true }
+    label: 'Apartment/House Number',
+    register: { required: 'Apartment/house number is required' }
 }, {
-    name: 'address_street',
+    name: 'street',
     type: 'text',
-    label: 'Address Street',
-    register: { required: true }
+    label: 'Street',
+    register: { required: 'Street is required' }
 }, {
-    name: 'address_zipcode',
+    name: 'city',
     type: 'text',
-    label: 'Address Zip',
-    register: { required: true }
+    label: 'City',
+    // placeholder: 'eg. 2321KK',
+    register: { required: 'City is required' }
+
+},{
+    name: 'postcode',
+    type: 'text',
+    label: 'Postcode',
+    // placeholder: 'eg. 2321KK',
+    register: { required: 'Postcode is required', pattern: {
+        value: /^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-z]{2}$/,
+        message: 'Please provide correct Dutch postcode (eg. 2321KK)'
+    }}
 
 }, {
     name: 'gender',
     type: 'radio',
-    options: ['male', 'female'],
+    options: ['Male', 'Female'],
     label: 'Gender',
-    register: { required: true }
+    register: { required: 'Gender is required' }
 }, ]
 
 const SignUp = () => {
     const { register, handleSubmit, errors } = useForm(); // initialise the hook
+    const [ hasSubmitted, setHasSubmitted ] = useState(false); // initialise the hook
 
     useEffect(() => {
     }, [errors])
 
-    const onSubmit = (data:any) => console.log(data);
 
+    const onSubmit = (data:any) => {
+        api.post('/subscriptions', mapSignUpFormToUserDTO(data))
+            .then(res => { setHasSubmitted(true) });
+    };
+
+
+    const mapSignUpFormToUserDTO = (form:any):UserDTO => {
+        return {
+            name: form.name,
+            email: form.email,
+            phone: form.phone,
+            gender: form.gender,
+            address: {
+                number: form.address_number,
+                street: form.street,
+                zipcode: form.postcode,
+                city: form.city
+            }
+        }
+    }
 
     const mapFormTypeToComponent = (input:FormInput, index:number) => {
         return (
-            <div key={input.name} className="col-md-6 col-12 mb-2">
+            <div key={input.name} className="col-md-6 col-12 mb-1">
                 {
                     (() => { 
                         switch(input.type) {
                             case 'text': {
-                                return (<TextInput name={input.name} hasError={errors[input.name] != null} label={input.label} register={register(input.register)}></TextInput>)
+                                return (<TextInput input={input} hasError={errors[input.name] != null} register={register(input.register)}></TextInput>)
                             }
                             case 'radio': {
-                                return (<RadioInput name={input.name} hasError={errors[input.name] != null} label={input.label}  register={register(input.register)} options={input.options}></RadioInput>)
+                                return (<RadioInput input={input} hasError={errors[input.name] != null} register={register(input.register)}></RadioInput>)
                             }
                             default: {
                                 return <div></div>
@@ -69,7 +111,7 @@ const SignUp = () => {
                         }
                     })()
                 }
-                <div className="form-field__error mt-2 mb-2"> { errors[input.name] && errors[input.name]!.message }</div>
+                <div className="form-field__error mt-2 mb-2"> { errors[input.name] && errors[input.name]!.message } &nbsp; </div>
             </div>
         )
     }
@@ -83,6 +125,7 @@ const SignUp = () => {
                     <input className="btn" type="submit" value="Sign Up" />
                 </div>
             </form>
+            <Confetti active={ hasSubmitted } />
         </div>
     );
 }

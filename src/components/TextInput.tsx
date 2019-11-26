@@ -4,17 +4,16 @@ import '../containers/SignUp.css';
 
 interface TextInputProps {
   register:any,
-  label: string,
+  input: FormInput,
   hasError: boolean,
-  name: string
 }
 
-const TextInput = ({ register, label, hasError, name, ...rest }:TextInputProps) => {
+const TextInput = ({ register, hasError, input }:TextInputProps) => {
 
   return (
     <React.Fragment>
-      <label className="mb-2 text--bold d-block">{ label }</label>
-      <input type="text" ref={register} {...rest} name={name} className={`input--text ${hasError ? 'input--text--error' : ''}`}/>
+      <label className="mb-2 text--bold d-block">{ input.label }</label>
+      <input type="text" ref={register} placeholder={input.placeholder} name={input.name} className={`input--text ${hasError ? 'input--text--error' : ''}`}/>
     </React.Fragment>
   );
 }

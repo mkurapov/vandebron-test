@@ -1,0 +1,43 @@
+{
+  "subscriptions": [
+    {
+      "id": 1,
+      "name": "Buckley Patrick",
+      "gender": "male",
+      "email": "buckleypatrick@golistic.com",
+      "phone": "0634796837",
+      "address": {
+        "number": 7,
+        "street": "Adamsdreef",
+        "city": "Rhenen",
+        "zipcode": "6716ME"
+      }
+    },
+    {
+      "name": "cat",
+      "email": "meow@gmail.com",
+      "phone": "3423421344",
+      "gender": "Female",
+      "address": {
+        "number": "d",
+        "street": "ddf",
+        "zipcode": "dfadsfsdf",
+        "city": "dfd"
+      },
+      "id": 2
+    },
+    {
+      "name": "dsaf",
+      "email": "dogd@gma.c",
+      "phone": "34412341234",
+      "gender": "Male",
+      "address": {
+        "number": "34",
+        "street": "j",
+        "zipcode": "2211kk",
+        "city": "j"
+      },
+      "id": 3
+    }
+  ]
+}
