@@ -1,9 +1,38 @@
 import React from 'react';
-import './SignUp.css';
-import { signUpForm } from './signUpForm';
 import { FormInput } from '../types';
 import TextInput from '../components/TextInput';
 import RadioInput from '../components/RadioInput';
+import './SignUp.css';
+
+const SignUpFormModel:FormInput[] = [ {
+    name: 'name',
+    type: 'text',
+    label: 'Full Name'
+}, {
+    name: 'email',
+    type: 'text',
+    label: 'Email'
+},{
+    name: 'gender',
+    type: 'radio',
+    options: [
+        { value: 'male', label: 'Male' },
+        { value: 'female', label: 'Female' }
+    ],
+    label: 'Gender'
+},  {
+    name: 'address_number',
+    type: 'text',
+    label: 'House Number'
+}, {
+    name: 'address_street',
+    type: 'text',
+    label: 'Adress Street'
+}, {
+    name: 'address_zipcode',
+    type: 'text',
+    label: 'Adress Zip'
+},]
 
 const SignUp = () => {
 
@@ -32,18 +61,13 @@ const SignUp = () => {
                 <div className="form-field__error mt-2">{  }</div>
             </div>
         )
-        
     }
-
-    const renderForm = () => {
-        return signUpForm.map((input:FormInput) =>  mapFormTypeToComponent(input));
-    };
 
     return (
     <div>
         <h1 className="text--lg">Please add your details</h1>
         <form className="sign-up-form row py-4 px-3">
-            { renderForm() }
+            { SignUpFormModel.map((input:FormInput) =>  mapFormTypeToComponent(input)) }
             <div className="col-12">
                 <input className="btn"  type="submit" value="Sign Up" />
             </div>

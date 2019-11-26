@@ -2,10 +2,9 @@ import React from 'react';
 import { FormInput, InputComponent } from '../types';
 import '../containers/SignUp.css';
 
-
 const RadioInput = ( props: InputComponent ) => {
   return (
-    <div className="col-12">
+    <React.Fragment>
       <label className="text--bold mb-2 d-block">{ props.input.label }</label>
       { props.input.options && props.input.options.map((o,i) => 
       (
@@ -14,7 +13,7 @@ const RadioInput = ( props: InputComponent ) => {
           <label >{ o.label }</label>
         </div>
       ))}
-    </div>
+    </React.Fragment>
   );
 }
 
