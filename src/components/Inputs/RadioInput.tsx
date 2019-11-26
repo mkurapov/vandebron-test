@@ -1,14 +1,14 @@
 import React from 'react';
-import { FormInput, InputComponent } from '../types';
-import '../containers/SignUp/SignUp.css';
+import { FormInput } from '../../types';
+import './Inputs.css';
 
 interface RadioInputProps {
   register:any,
   input: FormInput,
-  hasError: boolean,
+  errors: any,
 }
 
-const RadioInput = ({ register, input, hasError }:RadioInputProps) => {
+const RadioInput = ({ register, input, errors }:RadioInputProps) => {
   return (
     <React.Fragment>
       <label className="text--bold mb-2 d-block">{ input.label }</label>
@@ -21,6 +21,7 @@ const RadioInput = ({ register, input, hasError }:RadioInputProps) => {
         </div>
       ))}
       </div>
+      <div className="form-field__error mt-2 mb-2"> { errors && errors.message } &nbsp; </div>
     </React.Fragment>
   );
 }

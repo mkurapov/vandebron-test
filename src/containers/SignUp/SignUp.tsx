@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { FormInput, UserDTO } from '../../types';
-import TextInput from '../../components/TextInput';
-import RadioInput from '../../components/RadioInput';
+import TextInput from '../../components/Inputs/TextInput';
+import RadioInput from '../../components/Inputs/RadioInput';
 import useForm from 'react-hook-form';
-import './SignUp.css';
 import api from '../../api';
 import Confetti from 'react-dom-confetti';
 
+// register object is for the react-hook-form library: https://react-hook-form.com/api#register
 const SignUpFormModel:FormInput[] = [ {
     name: 'name',
     type: 'text',
@@ -66,9 +66,9 @@ const SignUp = () => {
 
     const onSubmit = (data:any) => {
         api.post('/subscriptions', mapSignUpFormToUserDTO(data))
-            .then(res => { setHasSubmitted(true); setUserName(res.data.name) });
+            .then(res => { setHasSubmitted(true); setUserName(res.data.name) })
+            .catch(/* TODO: add error feedback */);
     };
-
 
     const mapSignUpFormToUserDTO = (form:any):UserDTO => {
         return {
@@ -93,10 +93,10 @@ const SignUp = () => {
                     (() => { 
                         switch(input.type) {
                             case 'text': {
-                                return (<TextInput input={input} hasError={errors[input.name] != null} register={register(input.register)}></TextInput>)
+                                return (<TextInput input={input} errors={errors[input.name]} register={register(input.register)}></TextInput>)
                             }
                             case 'radio': {
-                                return (<RadioInput input={input} hasError={errors[input.name] != null} register={register(input.register)}></RadioInput>)
+                                return (<RadioInput input={input} errors={errors[input.name]} register={register(input.register)}></RadioInput>)
                             }
                             default: {
                                 return <div></div>
@@ -104,7 +104,6 @@ const SignUp = () => {
                         }
                     })()
                 }
-                <div className="form-field__error mt-2 mb-2"> { errors[input.name] && errors[input.name]!.message } &nbsp; </div>
             </div>
         )
     }

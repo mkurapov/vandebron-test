@@ -23,8 +23,7 @@ const SubscriptionList = () => {
       <span className="table__text--sm">{ user.email }</span>
     </div>);
   }
-
-
+  
   return (
     <div>
         <h1 className="text--lg">Subscription List</h1>

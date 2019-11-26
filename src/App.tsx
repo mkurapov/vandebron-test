@@ -3,6 +3,7 @@ import './App.css';
 import './bootstrap-grid.css';
 import { Switch, Route, NavLink, Redirect, withRouter } from 'react-router-dom';
 import SignUp from './containers/SignUp/SignUp';
+import Header from './components/Header/Header';
 import SubscriptionList from './containers/SubscriptionList/SubscriptionList';
 
 
@@ -10,19 +11,7 @@ import SubscriptionList from './containers/SubscriptionList/SubscriptionList';
 const App: React.FC = () => {
   return (
       <React.Fragment>
-          
-          <div className="header">
-              <img className="header__logo" src={require('./assets/logo.png')}/>
-              <div>
-                <NavLink to="/" exact className="link text-center mr-3" activeClassName="link--selected">
-                  Sign Up
-                </NavLink>
-              
-                <NavLink to="/subscriptions" className="text-center link" activeClassName="link--selected">
-                  Subscriptions
-                </NavLink>
-              </div>
-        </div>
+        <Header/>
         <div className="content">
           <Switch>
             <Route exact path='/'> 
