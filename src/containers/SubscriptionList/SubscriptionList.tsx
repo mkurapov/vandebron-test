@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import api from '../../api';
 import { UserDTO } from '../../types';
 import './SubscriptionList.css'
+import { withRouter } from 'react-router-dom';
+
 
 const SubscriptionList = () => {
   const [subscribers, setSubscribers] = useState([]);
@@ -27,4 +29,4 @@ const SubscriptionList = () => {
   );
 }
 
-export default SubscriptionList;
+export default withRouter(SubscriptionList);

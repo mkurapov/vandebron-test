@@ -50,7 +50,7 @@ const SignUpFormModel:FormInput[] = [ {
     label: 'Postcode',
     // placeholder: 'eg. 2321KK',
     register: { required: 'Postcode is required', pattern: {
-        value: /^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-z]{2}$/,
+        value: /^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-zA-Z]{2}$/,
         message: 'Please provide correct Dutch postcode (eg. 2321KK)'
     }}
 }, {
