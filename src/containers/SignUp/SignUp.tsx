@@ -7,7 +7,6 @@ import './SignUp.css';
 import api from '../../api';
 import Confetti from 'react-dom-confetti';
 
-
 const SignUpFormModel:FormInput[] = [ {
     name: 'name',
     type: 'text',
@@ -41,14 +40,12 @@ const SignUpFormModel:FormInput[] = [ {
     name: 'city',
     type: 'text',
     label: 'City',
-    // placeholder: 'eg. 2321KK',
     register: { required: 'City is required' }
 
 },{
     name: 'postcode',
     type: 'text',
     label: 'Postcode',
-    // placeholder: 'eg. 2321KK',
     register: { required: 'Postcode is required', pattern: {
         value: /^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-zA-Z]{2}$/,
         message: 'Please provide correct Dutch postcode (eg. 2321KK)'
@@ -88,6 +85,7 @@ const SignUp = () => {
         }
     }
 
+    // TODO: turn into a higher order component
     const mapFormTypeToComponent = (input:FormInput, index:number) => {
         return (
             <div key={input.name} className="col-md-6 col-12 mb-1">
