@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import './bootstrap-grid.css';
 import { Switch, Route, NavLink, Redirect, withRouter } from 'react-router-dom';
-import SignUp from './containers/SignUp';
-import SubscriptionList from './containers/SubscriptionList';
+import SignUp from './containers/SignUp/SignUp';
+import SubscriptionList from './containers/SubscriptionList/SubscriptionList';
 
 
 // TODO: Pull out routes into object to iterate

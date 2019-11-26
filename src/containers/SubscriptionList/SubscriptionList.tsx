@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import api from '../api';
-import { UserDTO } from '../types';
+import api from '../../api';
+import { UserDTO } from '../../types';
 import './SubscriptionList.css'
 
 const SubscriptionList = () => {

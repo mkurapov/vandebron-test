@@ -33,5 +33,9 @@ input:focus {
   color: #d0021b;
 }
 
+.input--radio__options {
+  height: 50px;
+}
+
 
 

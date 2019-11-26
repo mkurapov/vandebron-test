@@ -14,133 +14,30 @@
       }
     },
     {
-      "name": "cat",
-      "email": "meow@gmail.com",
-      "phone": "3423421344",
-      "gender": "Female",
+      "name": "Free Smoke",
+      "email": "23934@gmailc.om",
+      "phone": "494949",
+      "gender": "Male",
       "address": {
-        "number": "d",
-        "street": "ddf",
-        "zipcode": "dfadsfsdf",
-        "city": "dfd"
+        "number": "4",
+        "street": "Sinf",
+        "zipcode": "4944kk",
+        "city": "leiden"
       },
       "id": 2
     },
     {
-      "name": "dsaf",
-      "email": "dogd@gma.c",
-      "phone": "34412341234",
-      "gender": "Male",
-      "address": {
-        "number": "34",
-        "street": "j",
-        "zipcode": "2211kk",
-        "city": "j"
-      },
-      "id": 3
-    },
-    {
-      "name": "dsaf",
-      "email": "dogd@gma.c",
-      "phone": "34412341234",
-      "gender": "Male",
-      "address": {
-        "number": "34",
-        "street": "j",
-        "zipcode": "2211kk",
-        "city": "j"
-      },
-      "id": 4
-    },
-    {
-      "name": "borocoli",
-      "email": "dbd@gmai.c",
-      "phone": "03030303444",
+      "name": "Catt",
+      "email": "sdfidf@gma.c",
+      "phone": "4949492`",
       "gender": "Female",
       "address": {
-        "number": "3",
-        "street": "dd",
-        "zipcode": "5555ke",
-        "city": "d"
+        "number": "32",
+        "street": "dsfjsdf",
+        "zipcode": "3322ff",
+        "city": "fisadf"
       },
-      "id": 5
-    },
-    {
-      "name": "dog",
-      "email": "df@d",
-      "phone": "3030303333",
-      "address": {},
-      "id": 6
-    },
-    {
-      "name": "dfdf",
-      "email": "33@gma.c",
-      "phone": "4044040404",
-      "address": {},
-      "id": 7
-    },
-    {
-      "name": "32332323232",
-      "email": "3434@gmai.c",
-      "phone": "4959595954",
-      "address": {},
-      "id": 8
-    },
-    {
-      "name": "big dog",
-      "email": "dfddf@gma.c",
-      "phone": "4949494949",
-      "address": {},
-      "id": 9
-    },
-    {
-      "name": "big rig",
-      "email": "39393@gma.c",
-      "phone": "3939394955",
-      "address": {},
-      "id": 10
-    },
-    {
-      "name": "anderson paak",
-      "email": "3737338@gma.c",
-      "phone": "9494949595",
-      "address": {},
-      "id": 11
-    },
-    {
-      "name": "Soliee",
-      "email": "3939@gmailcq.a",
-      "phone": "49494949495",
-      "address": {},
-      "id": 12
-    },
-    {
-      "name": "Michael",
-      "email": "48484@fja.c",
-      "phone": "4949495965",
-      "address": {},
-      "id": 13
-    },
-    {
-      "name": "ro44o4o4",
-      "email": "4434340@gmaic.a",
-      "phone": "49494949494",
-      "address": {},
-      "id": 14
-    },
-    {
-      "name": "Boi",
-      "email": "494954@gma.c",
-      "phone": "49494959696",
-      "address": {},
-      "id": 15
-    },
-    {
-      "name": "50505050`rerf",
-      "email": "f494949@gmad.c",
-      "phone": "4599494959435345",
-      "address": {},
-      "id": 16
+      "id": 3
     }
   ]
 }

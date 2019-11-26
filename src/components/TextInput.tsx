@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { FormInput, InputComponent } from '../types';
-import '../containers/SignUp.css';
+import '../containers/SignUp/SignUp.css';
 
 interface TextInputProps {
   register:any,
