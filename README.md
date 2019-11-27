@@ -1,3 +1,30 @@
+# Vandebron Code Challenge
+Registration form in React
+
+## Instructions
+- Clone this repo
+- run `npm install`
+- run `npm start` to load the React project
+- In another terminal, run `json-server --watch db.json` to start the mocked API server
+- Navigate to http://localhost:3000
+
+## Description
+
+This web app contains two pages: a Sign Up page, and a Subscription List page. 
+In the Sign Up page, the user is shown a form which they have to fill out. Once they do so correctly (passing all the validators), a mocked POST request will be made with the user data. The list of all added users can be seen when navigating to the Subscription List page, where a GET request grabs all of the signed up users.
+
+Libraries used:
+- `json-server` to mock the API/BE
+- `react-hook-forms` to facilitate simpler form validation and management
+- `react-router-dom` to navigate between routes
+
+## Considerations
+- Input elements are wrapped into components, as to follow the storybook style format, which would be implemented later.
+- In the Sign Up component, the SignUpFormModel is a array of the form fields that are rendered on the page. This is to make adding and removing form elements easier. In the future, there should be a higher order component to build the form, and map the input types. It was good practice to see how building out forms with a lot of fields could be implemented, but not entirely necessary for smaller forms.
+- For failed requests, there could be a modal/toaster component or simply a message underneath the form to alert the user if something went wrong.
+
+
+***
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
