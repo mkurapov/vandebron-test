@@ -3,8 +3,6 @@ import api from '../../api';
 import { UserDTO } from '../../types';
 import './SubscriptionList.css'
 import { withRouter } from 'react-router-dom';
-import { render } from 'react-dom';
-
 
 const SubscriptionList = () => {
   const [subscribers, setSubscribers] = useState([]);
@@ -23,7 +21,7 @@ const SubscriptionList = () => {
       <span className="table__text--sm">{ user.email }</span>
     </div>);
   }
-  
+
   return (
     <div>
         <h1 className="text--lg">Subscription List</h1>

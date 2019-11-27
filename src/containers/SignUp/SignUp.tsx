@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FormInput, UserDTO } from '../../types';
 import TextInput from '../../components/Inputs/TextInput';
 import RadioInput from '../../components/Inputs/RadioInput';
 import useForm from 'react-hook-form';
 import api from '../../api';
 import Confetti from 'react-dom-confetti';
+
+export const VALID_EMAIL_REGEX = /^\S+@\S+$/;
+export const VALID_POSTAL_REGEX = /^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-zA-Z]{2}$/;
+
 
 // register object is for the react-hook-form library: https://react-hook-form.com/api#register
 const SignUpFormModel:FormInput[] = [ {
@@ -17,7 +21,7 @@ const SignUpFormModel:FormInput[] = [ {
     type: 'text',
     label: 'Email',
     register: { required: 'Please provide correct email', pattern: {
-        value: /^\S+@\S+$/,
+        value: VALID_EMAIL_REGEX,
         message: 'Please provide correct email'
       } }
 }, {
@@ -41,13 +45,12 @@ const SignUpFormModel:FormInput[] = [ {
     type: 'text',
     label: 'City',
     register: { required: 'City is required' }
-
 },{
     name: 'postcode',
     type: 'text',
     label: 'Postcode',
     register: { required: 'Postcode is required', pattern: {
-        value: /^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-zA-Z]{2}$/,
+        value: VALID_POSTAL_REGEX,
         message: 'Please provide correct Dutch postcode (eg. 2321KK)'
     }}
 }, {

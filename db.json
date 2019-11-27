@@ -14,56 +14,17 @@
       }
     },
     {
-      "name": "Free Smoke",
-      "email": "23934@gmailc.om",
-      "phone": "494949",
+      "name": "Matt Damon",
+      "email": "mattdamon@gmail.com",
+      "phone": "+14039201029",
       "gender": "Male",
-      "address": {
-        "number": "4",
-        "street": "Sinf",
-        "zipcode": "4944kk",
-        "city": "leiden"
-      },
-      "id": 2
-    },
-    {
-      "name": "Catt",
-      "email": "sdfidf@gma.c",
-      "phone": "4949492`",
-      "gender": "Female",
       "address": {
         "number": "32",
-        "street": "dsfjsdf",
-        "zipcode": "3322ff",
-        "city": "fisadf"
+        "street": "Sigma",
+        "zipcode": "2321kk",
+        "city": "Leiden"
       },
-      "id": 3
-    },
-    {
-      "name": "bad",
-      "email": "dfsdfo@gma.c",
-      "phone": "3939393",
-      "gender": "Male",
-      "address": {
-        "number": "i3i39",
-        "street": "39393",
-        "zipcode": "2321kl",
-        "city": "39393"
-      },
-      "id": 4
-    },
-    {
-      "name": "ssddf",
-      "email": "sdfsd@d",
-      "phone": "sdfdsaf",
-      "gender": "Female",
-      "address": {
-        "number": "sdafadsf",
-        "street": "sadfsdf",
-        "zipcode": "2313kk",
-        "city": "sdfdasf"
-      },
-      "id": 5
+      "id": 2
     }
   ]
 }
